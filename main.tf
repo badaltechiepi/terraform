@@ -12,7 +12,7 @@ provider "aws" {
   secret_key = "XFCwe1jcqsFbRRknthk91T+z2nApDiyWpwTHZHNE"
 }
 resource "aws_s3_bucket" "bucket" {
-  bucket = "my-tf-test-bucket"
+  bucket = "my-tf-test-bucket-zee"
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
