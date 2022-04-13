@@ -6,33 +6,33 @@ resource "aws_vpc" "vpc" {
 }
 resource "aws_subnet" "web1" {
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = var.subnet_cidr[0]
+  cidr_block = var.subnet_cidrs[0]
 
   tags = {
-    Name = var.subnet_avzone[0]
+    Name = var.subnet_names[0]
   }
 }
 resource "aws_subnet" "web2" {
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = var.subnet_cidr[1]
+  cidr_block = var.subnet_cidrs[1]
 
   tags = {
-    Name = var.subnet_avzone[1]
+    Name = var.subnet_names[1]
   }
 }
 resource "aws_subnet" "db1" {
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = var.subnet_cidr[2]
+  cidr_block = var.subnet_cidrs[2]
 
   tags = {
-    Name = var.subnet_avzone[2]
+    Name = var.subnet_names[2]
   }
 }
 resource "aws_subnet" "db2" {
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = var.subnet_cidr[3]
+  cidr_block = var.subnet_cidrs[3]
 
   tags = {
-    Name = var.subnet_avzone[3]
+    Name = var.subnet_names[3]
   }
 }
