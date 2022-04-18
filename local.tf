@@ -1,1 +1,4 @@
-vpc_name =  primary
+locals{
+   
+    vpc_name =  primary
+}
