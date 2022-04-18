@@ -1,4 +1,4 @@
 locals{
    
-    vpc_name =  primary
+    vpc_name =  "primary"
 }
