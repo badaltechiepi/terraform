@@ -6,7 +6,7 @@ resource "aws_vpc" "vpc" {
 }
 #subnet creation for the web,app,db
 resource "aws_subnet" "subnetes" {
-  count      = 6
+  count      = 4
   vpc_id     = aws_vpc.vpc.id
   cidr_block = var.subnet_cidrs[count.index]
 
