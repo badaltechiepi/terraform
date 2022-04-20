@@ -19,6 +19,7 @@ resource "aws_security_group" "allow_tls" {
   name        = "websg"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.vpc.id
+  #this is for ssh port
   ingress{
   description = "ssh port for the web"
   from_port   = local.ssh_port
@@ -26,6 +27,7 @@ resource "aws_security_group" "allow_tls" {
   protocol    = local.protocol
   cidr_blocks = [ local.anywhere ]
   }
+  #this is for http port
   ingress{
   description = "HTTP port for the web"
   from_port   = local.http_port
@@ -33,6 +35,7 @@ resource "aws_security_group" "allow_tls" {
   protocol    = local.protocol
   cidr_blocks = [local.anywhere]
   }
+  #this is for https port
   ingress{
   description = "HTTPS port for the web"
   from_port   = local.https_port
@@ -40,6 +43,7 @@ resource "aws_security_group" "allow_tls" {
   protocol    = local.protocol
   cidr_blocks = [local.anywhere]
   }
+  #out bound rule
   egress {
     from_port        = 0
     to_port          = 0
