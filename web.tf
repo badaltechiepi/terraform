@@ -5,7 +5,4 @@ resource "aws_instance" "web1" {
   vpc_security_group_ids      = [aws_security_group.websg.id]
   subnet_id                   = aws_subnet.subnetes[0].id
   key_name                    = "rancher"
-  tags = {
-    Name = "web1"
-  }
 }
