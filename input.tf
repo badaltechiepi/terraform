@@ -10,6 +10,6 @@ variable "subnet_cidrs" {
 }
 variable "subnet_names" {
   type    = list(string)
-  default = ["web1","web2","app1","app2","db1","db2"]
+  default = ["web1","web2","db1","db2"]
   description = "subnet name"
 }

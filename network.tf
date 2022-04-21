@@ -15,7 +15,7 @@ resource "aws_subnet" "subnetes" {
   }
 }
 #security group creation for the web
-resource "aws_security_group" "allow_tls" {
+resource "aws_security_group" "websg" {
   name        = "websg"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.vpc.id
