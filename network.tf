@@ -58,7 +58,7 @@ resource "aws_security_group" "websg" {
 
 }
 #security group for the DB
-resource "aws_security_group" "websg" {
+resource "aws_security_group" "dbsg" {
   name        = "dbsg"
   description = "only internal communication"
   vpc_id      = aws_vpc.vpc.id
