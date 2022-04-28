@@ -6,10 +6,10 @@ resource "aws_vpc" "vpc" {
 }
 #subnet creation for the web,app,db
 resource "aws_subnet" "subnetes" {
-  count      = 4
+  count      = length(var.subnet_names) #length function to take the count
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = var.subnet_cidrs[count.index]
-
+ # cidr_block = var.subnet_cidrs[count.index] 
+  cidr_block = cidrsubnet(var.vpc_cidr, 8, count.index )
   tags       = {
     Name     = var.subnet_names[count.index]
   }
