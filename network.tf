@@ -17,7 +17,7 @@ resource "aws_subnet" "subnetes" {
 #security group creation for the web
 resource "aws_security_group" "websg" {
   name        = "websg"
-  description = "Allow TLS inbound traffic"
+  description = "allow trafic to access the application"
   vpc_id      = aws_vpc.vpc.id
   #this is for ssh port
   ingress{
@@ -54,6 +54,32 @@ resource "aws_security_group" "websg" {
 
   tags = {
     Name = local.web_sg
+  }
+
+}
+#security group for the DB
+resource "aws_security_group" "websg" {
+  name        = "dbsg"
+  description = "only internal communication"
+  vpc_id      = aws_vpc.vpc.id
+  #this is for ssh port
+  ingress{
+  description = "open postgress only in the VPC"
+  from_port   = local.pg_port
+  to_port     = local.pg_port
+  protocol    = local.protocol
+  cidr_blocks = [ var.vpc_cidr ]
+  }
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = [local.anywhere]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = local.db_sg
   }
 
 }
