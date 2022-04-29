@@ -14,9 +14,9 @@ resource "aws_subnet" "subnets" {
     Name     = var.subnet_names[count.index]
   }
   #explicity dependency
-  depends_on = [
-    aws_vpc.vpc
-  ]
+ # depends_on = [
+  #  aws_vpc.vpc
+  #]
 }
 #security group creation for the web
 resource "aws_security_group" "websg" {
