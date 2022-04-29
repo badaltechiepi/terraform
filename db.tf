@@ -7,13 +7,13 @@ resource "aws_db_subnet_group" "db_subnet" {
   }
 }
 #creating the RDS
-resource "aws_db_instance" "mypostgress" {
+resource "aws_db_instance" "db" {
     allocated_storage           = 20
-    engine                      = "postgress"
+    engine                      = "postgres"
     apply_immediately           = true
     auto_minor_version_upgrade  =  false
     backup_retention_period     = 0
-    db_db_subnet_group_name     = aws_db_subnet_group.db_subnet.name
+    db_subnet_group_name        = aws_db_subnet_group.db_subnet.name
     instance_class              = "db.t3.micro"
     multi_az                    = false
     name                        = "instacook"
