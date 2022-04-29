@@ -5,3 +5,6 @@ output "subnets" {
     value = aws_subnet.subnets
   
 }
+output "dbname" {
+  value = aws_db_instance.db.name
+}
