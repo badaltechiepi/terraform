@@ -8,3 +8,6 @@ output "subnets" {
 output "dbname" {
   value = aws_db_instance.db.name
 }
+output "publicip" {
+  value = aws_instance.web1.public_ip
+}
