@@ -111,19 +111,19 @@ resource "aws_route_table" "private_rt" {
 }
 #associated the public subnet for web
 resource "aws_route_table_association" "web1_public_association" {
-  subnet_id      = aws_subnet.subnetes[0].id
+  subnet_id      = aws_subnet.subnets[0].id
   route_table_id = aws_route_table.public_rt.id
 }
 resource "aws_route_table_association" "web2_public_association" {
-  subnet_id      = aws_subnet.subnetes[1].id
+  subnet_id      = aws_subnet.subnets[1].id
   route_table_id = aws_route_table.public_rt.id
 }
 #associated the private subnet for DB
 resource "aws_route_table_association" "db1_private_association" {
-  subnet_id      = aws_subnet.subnetes[2].id
+  subnet_id      = aws_subnet.subnets[2].id
   route_table_id = aws_route_table.private_rt.id
 }
 resource "aws_route_table_association" "db2_private_association" {
-  subnet_id      = aws_subnet.subnetes[3].id
+  subnet_id      = aws_subnet.subnets[3].id
   route_table_id = aws_route_table.private_rt.id
 }
