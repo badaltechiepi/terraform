@@ -5,7 +5,7 @@ resource "aws_vpc" "vpc" {
   }
 }
 #subnet creation for the web,app,db
-resource "aws_subnet" "subnetes" {
+resource "aws_subnet" "subnets" {
   count      = length(var.subnet_names) #length function to take the count
   vpc_id     = aws_vpc.vpc.id
  # cidr_block = var.subnet_cidrs[count.index] 
