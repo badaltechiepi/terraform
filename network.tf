@@ -59,11 +59,6 @@ resource "aws_security_group" "websg" {
   tags = {
     Name = local.web_sg
   }
-  # explicity dependency on the subnets
-  depends_on = [
-    aws_subnet.subnets
-  ]
-
 }
 #security group for the DB
 resource "aws_security_group" "dbsg" {
