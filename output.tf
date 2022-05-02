@@ -14,3 +14,7 @@ output "publicip" {
     aws_instance.web1
   ]
 }
+output "dbsubnets" {
+  
+  value = aws_db_subnet_group.db_subnet
+}
