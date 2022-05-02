@@ -17,8 +17,8 @@ resource "aws_instance" "web1" {
   }
   provisioner "remote-exec" {
     inline = [
-      "sudo apt update -y",
-      "sudo apt install apache2 -y" 
+      "sudo apt update",
+      "sudo apt install apache2 -y"
     ]
   }
 }
