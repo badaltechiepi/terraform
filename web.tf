@@ -14,7 +14,11 @@ resource "aws_instance" "web1" {
      host = self.aws_instance.public_ip
      port = 22
      private_key = file("/home/ubuntu/terraform.pem")
-
-
+  }
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt update -y",
+      "sudo apt install apache2 -y" 
+    ]
   }
 }
