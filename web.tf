@@ -8,4 +8,13 @@ resource "aws_instance" "web1" {
    tags = {
     Name = "web1"
   }
+  connection {
+     type = "ssh"
+     user = "ubuntu"
+     host = self.aws_instance.public_ip
+     port = 22
+     private_key = file("/home/ubuntu/terraform.pem")
+
+
+  }
 }
