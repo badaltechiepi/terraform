@@ -4,7 +4,7 @@ resource "aws_instance" "web1" {
   instance_type               = "t2.micro"
   vpc_security_group_ids      = [aws_security_group.websg.id]
   subnet_id                   = aws_subnet.subnets[0].id
-  key_name                    = "rancher"
+  key_name                    = "terraform"
    tags = {
     Name = "web1"
   }
