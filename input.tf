@@ -15,5 +15,8 @@ variable "subnet_names" {
 }
 variable "build_id" {
     default = 1
+}
 
+variable "db_creation" {
+  default = "yes"
 }

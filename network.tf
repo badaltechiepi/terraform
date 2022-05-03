@@ -47,6 +47,14 @@ resource "aws_security_group" "websg" {
   protocol    = local.protocol
   cidr_blocks = [local.anywhere]
   }
+  #this is the port open for the application
+  ingress{
+  description = "HTTP port for the web"
+  from_port   = local.other_port
+  to_port     = local.other_port
+  protocol    = local.protocol
+  cidr_blocks = [local.anywhere]
+  }
   #out bound rule
   egress {
     from_port        = 0

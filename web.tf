@@ -20,10 +20,21 @@ resource "null_resource" "deployapp" {
      port = 22
      private_key = file("/home/ubuntu/terraform.pem")
   }
-  provisioner "remote-exec" {
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "sudo apt update",
+  #     "sudo apt install nginx -y"
+  #   ]
+  # }
+  provisioner "file" {
+    source   = "deployspc.sh"
+    destination = "/tmp/deployspc.sh"
+  
+  }
+   provisioner "remote-exec" {
     inline = [
-      "sudo apt update",
-      "sudo apt install nginx -y"
+      "chmod +x /tmp/script.sh",
+      "/tmp/script.sh args",
     ]
-  } 
+  }
 }
