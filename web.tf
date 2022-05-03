@@ -33,8 +33,8 @@ resource "null_resource" "deployapp" {
   }
    provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/script.sh",
-      "/tmp/script.sh args",
+      "chmod +x /tmp/deployspc.sh",
+      "/tmp/deployspc.sh",
     ]
   }
 }
