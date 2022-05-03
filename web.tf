@@ -16,7 +16,7 @@ resource "null_resource" "deployapp" {
   connection {
      type = "ssh"
      user = "ubuntu"
-     host = self.public_ip
+     host = aws_instance.web1.public_ip
      port = 22
      private_key = file("/home/ubuntu/terraform.pem")
   }
