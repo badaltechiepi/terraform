@@ -13,3 +13,7 @@ variable "subnet_names" {
   default = ["web1","web2","db1","db2"]
   description = "subnet name"
 }
+variable "build_id" {
+    default = 1
+
+}

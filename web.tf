@@ -8,6 +8,11 @@ resource "aws_instance" "web1" {
    tags = {
     Name = "web1"
   }
+}
+resource "null_resource" "deployapp" {
+  triggers = {
+    "build_id" = var.build_id
+  }
   connection {
      type = "ssh"
      user = "ubuntu"
@@ -20,5 +25,5 @@ resource "aws_instance" "web1" {
       "sudo apt update",
       "sudo apt install nginx -y"
     ]
-  }
+  } 
 }
