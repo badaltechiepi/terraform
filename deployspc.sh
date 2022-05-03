@@ -5,4 +5,4 @@ mkdir ~/apps
 cd ~/apps
 wget https://referenceapplicationskhaja.s3.us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar
 java -jar spring-petclinic-2.4.2.jar &
-sleep 60s
+sleep 120s
