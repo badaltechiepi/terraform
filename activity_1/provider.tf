@@ -10,7 +10,7 @@ terraform {
 provider "aws" {
   region     = "us-east-2"
 }
-# #remote place to store the state and lock perpose in aws
+#remote place to store the state and lock perpose in aws
 # terraform {
 #   backend "s3" {
 #     bucket = "qts3tfstatestechiepi"
@@ -19,3 +19,8 @@ provider "aws" {
 #     dynamodb_table = "qttflocking"
 #   }
 # }
+terraform {
+  backend "local" {
+    path = "/terraform.tfstate"
+  }
+}
