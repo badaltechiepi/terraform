@@ -15,7 +15,7 @@ terraform {
   backend "s3" {
     bucket = "qts3tfstatestechiepi"
     key    = "activity2.tfstate"
-    region = "us-west-2"
+    region = "us-east-2"
     dynamodb_table = "qttflocking"
   }
 }
